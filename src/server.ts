@@ -1,5 +1,5 @@
 import express, { Express, Request, Response } from "express";
-import config from "./config/config";
+import config from "../src/config/config";
 import {AuthRouter} from "./controllers/v0/users/routes/auth.router";
 const bodyParser = require('body-parser')
 const cors = require('cors')

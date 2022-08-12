@@ -1,7 +1,6 @@
 const { prisma } = require("../../prisma");
 const lnurl = require("lnurl");
 import crypto from "crypto";
-const { CONST } = require("../utils/const");
 
 async function generateK1() {
   let k1 = null;
