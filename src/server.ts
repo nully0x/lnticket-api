@@ -1,27 +1,26 @@
 import express, { Express, Request, Response } from "express";
 import config from "../src/config/config";
-import {AuthRouter} from "./controllers/v0/users/routes/auth.router";
-const bodyParser = require('body-parser')
-const cors = require('cors')
+import { AuthRouter } from "./controllers/v0/users/routes/auth.router";
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app: Express = express();
 const port = config.port;
 
-  // parse application/x-www-form-urlencoded
-  app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
 
-  // parse application/json
-  app.use(bodyParser.json())
+// parse application/json
+app.use(bodyParser.json());
 
-  app.use(cors({
-    origin: ['http://localhost:3000'],
+app.use(
+  cors({
+    origin: ["http://127.0.0.1:5173"],
     credentials: true,
-}))
-
+  })
+);
 
 app.use("/auth", AuthRouter);
-
-
 
 app.get("/", (req: Request, res: Response) => res.send("Hello World!"));
 
