@@ -23,11 +23,9 @@ router.get(
         .setIssuedAt()
         .setExpirationTime("5min")
         .sign(Buffer.from(jwt_secret, "utf-8"));
-
       return res.status(200).json({ ...data, session_token });
     } catch (error) {
-      console.log(error);
-      res.status(500).send("Unexpected error happened, please try again");
+      throw new Error(error);
     }
   }
 );

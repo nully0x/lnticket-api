@@ -8,7 +8,7 @@
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "node dist/src/server.js",
-    "clean": "true",
+    "clean": "rm -rf dist && true",
     "build": "yarn run clean && tsc",
     "postinstall": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
