@@ -10,7 +10,7 @@
     "prod": "node dist/src/server.js",
     "clean": "true",
     "build": "yarn run clean && tsc",
-    "postinstall": "npm run build",
+    "postinstall": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
